@@ -30,15 +30,20 @@
 #include <CGAL/Nef_polyhedron_3.h>
 #include <CGAL/IO/Polyhedron_iostream.h>
 #include <CGAL/IO/Nef_polyhedron_iostream_3.h>
+
+#ifndef VAL3DITY_USE_EPECSQRT
 #include <CGAL/Polyhedron_copy_3.h>
 
 //-- Nef requires EPEC (exact-predicates & exact-construction) and thus diff kernels
- //-- Polyhedron are converted when they are valid
+//-- Polyhedron are converted when they are valid
 typedef CGAL::Exact_predicates_exact_constructions_kernel   KE;
 typedef CGAL::Polyhedron_3<KE>                              CgalPolyhedronE;
 typedef CGAL::Nef_polyhedron_3<KE>                          Nef_polyhedron;
 
-typedef CGAL::Polyhedron_copy_3<CgalPolyhedron, CgalPolyhedronE::HalfedgeDS> Polyhedron_convert; 
+typedef CGAL::Polyhedron_copy_3<CgalPolyhedron, CgalPolyhedronE::HalfedgeDS> Polyhedron_convert;
+#else
+typedef CGAL::Nef_polyhedron_3<K> Nef_polyhedron;
+#endif
 
 //-- to keep track of all gml:Solids in a GML file
 int Solid::_counter = 0;
@@ -322,12 +327,15 @@ bool Solid::validate_solid_with_nef()
   vector<Nef_polyhedron> nefs;
   for (auto& sh : this->get_shells())
   {
+#ifndef VAL3DITY_USE_EPECSQRT
     //-- convert to an EPEC Polyhedron so that convertion to Nef is possible
     CgalPolyhedronE pe;
     Polyhedron_convert polyhedron_converter(*(sh->get_cgal_polyhedron()));
     pe.delegate(polyhedron_converter);
-    Nef_polyhedron onef(pe);
-    nefs.push_back(onef);
+    nefs.push_back(Nef_polyhedron(pe));
+#else
+    nefs.push_back(Nef_polyhedron(*(sh->get_cgal_polyhedron())));
+#endif
   }
 
   //-- test axiom #1 from the paper, Sect 4.5:

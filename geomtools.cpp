@@ -58,16 +58,16 @@ int projection_plane(const vector< Point3 > &lsPts, const vector<int> &ids)
 {
   Vector n;
   polygon_normal(lsPts, ids, n);
-  double maxcomp = abs(n.x());
+  double maxcomp = abs(CGAL::to_double(n.x()));
   int proj = 0;
   if (abs(n.y()) > maxcomp)
   {
-    maxcomp = abs(n.y());
+    maxcomp = abs(CGAL::to_double(n.y()));
     proj = 1;
   }
   if (abs(n.z()) > maxcomp)
   {
-    maxcomp = abs(n.z());
+    maxcomp = abs(CGAL::to_double(n.z()));
     proj = 2;
   }
   return proj;

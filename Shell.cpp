@@ -163,7 +163,9 @@ std::string Shell::get_poly_representation()
 std::string Shell::get_coords_key(Point3* p)
 {
   int tol = int(1 / _tol_snap);
-  std::string s = std::to_string(int64(p->x() * tol)) + std::to_string(int64(p->y() * tol)) + std::to_string(int64(p->z() * tol));
+  std::string s = std::to_string(int64(CGAL::to_double(p->x()) * tol)) +
+                  std::to_string(int64(CGAL::to_double(p->y()) * tol)) +
+                  std::to_string(int64(CGAL::to_double(p->z()) * tol));
   return s;
 }
 
@@ -393,8 +395,8 @@ void Shell::get_min_bbox(double& x, double& y)
     if (it->y() < miny)
       miny = it->y();
   }
-  x = minx;
-  y = miny;
+  x = CGAL::to_double(minx);
+  y = CGAL::to_double(miny);
 }
 
 
