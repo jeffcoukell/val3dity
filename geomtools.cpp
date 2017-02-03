@@ -27,6 +27,10 @@
 #include "CGAL/squared_distance_3.h"
 #include <CGAL/linear_least_squares_fitting_3.h>
 
+using namespace std;
+
+namespace val3dity
+{
 
 bool is_face_planar_distance2plane(const vector<Point3> &pts, double& value, float tolerance)
 {
@@ -143,3 +147,5 @@ bool is_face_planar_normals(const vector<int*> &trs, const vector<Point3>& lsPts
   }
   return isPlanar;
 }
+
+} // namespace val3dity

@@ -1,4 +1,3 @@
-
 /*
  val3dity - Copyright (c) 2011-2016, Hugo Ledoux.  All rights reserved.
  
@@ -27,6 +26,10 @@
 #include "validate_shell.h"
 #include <CGAL/Polygon_mesh_processing/orientation.h>
 
+using namespace std;
+
+namespace val3dity
+{
 
 //-- CGAL stuff
 typedef CgalPolyhedron::HalfedgeDS              HalfedgeDS;
@@ -360,4 +363,4 @@ CgalPolyhedron* construct_CgalPolyhedron_batch(const vector< vector<int*> >&lsTr
   return P;
 }
 
-
+} // namespace val3dity

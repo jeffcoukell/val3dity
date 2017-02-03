@@ -32,6 +32,10 @@
 #include <geos_c.h>
 #include <sstream>
 
+using namespace std;
+
+namespace val3dity
+{
 
 Shell::Shell(int id, double tol_snap)
 {
@@ -813,3 +817,5 @@ bool Shell::has_face_rings_toofewpoints(const vector< vector<int> >& theface)
   }
   return bErrors;
 }
+
+} // namespace val3dity

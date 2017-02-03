@@ -25,6 +25,11 @@
 
 #include "input.h"
 
+using namespace std;
+
+namespace val3dity
+{
+
 bool IOErrors::has_errors()
 {
   if (_errors.size() == 0)
@@ -660,4 +665,4 @@ void readOBJfile(std::vector<Solid*>& lsSolids, std::string &ifile, IOErrors& er
   allvertices.clear();
 } 
 
-  
+} // namespace val3dity

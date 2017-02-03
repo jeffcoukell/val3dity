@@ -26,7 +26,6 @@
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 */
 
-
 // CGAL kernel
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 #include <CGAL/Exact_predicates_exact_constructions_kernel.h>
@@ -38,9 +37,11 @@
 
 
 // STL library
-using namespace std;
 #include <vector>
 #include <map>
+
+namespace val3dity
+{
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
 
@@ -77,5 +78,7 @@ typedef enum
   POLY  = 2,
   OTHER = 3,
 } InputTypes;
+
+} // namespace val3dity
 
 #endif

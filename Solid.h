@@ -31,6 +31,9 @@
 
 #include <tuple>
 
+namespace val3dity
+{
+
 class Solid
 {
 public:
@@ -38,19 +41,19 @@ public:
   Solid(Shell* sh);
   ~Solid();
   
-  Shell*                 get_oshell();
-  void                   set_oshell(Shell* sh);
-  Shell*                 get_ishell(int i);
-  void                   add_ishell(Shell* sh);
-  const vector<Shell*>&  get_shells();
-  int                    num_ishells();
-  int                    num_faces();
-  int                    num_vertices();
+  Shell*                     get_oshell();
+  void                       set_oshell(Shell* sh);
+  Shell*                     get_ishell(int i);
+  void                       add_ishell(Shell* sh);
+  const std::vector<Shell*>& get_shells();
+  int                        num_ishells();
+  int                        num_faces();
+  int                        num_vertices();
   
-  std::string            get_id_building();
-  void                   set_id_building(std::string id);
-  std::string            get_id_buildingpart();
-  void                   set_id_buildingpart(std::string id);
+  std::string get_id_building();
+  void        set_id_building(std::string id);
+  std::string get_id_buildingpart();
+  void        set_id_buildingpart(std::string id);
   
   bool          validate(Primitive3D prim, double tol_planarity_d2p, double tol_planarity_normals);
   void          translate_vertices();
@@ -65,17 +68,18 @@ public:
   std::string   get_id();
   void          set_id(std::string id);
 private:
-  std::string     _id;
-  std::string     _id_building;
-  std::string     _id_buildingpart;
-  vector<Shell*>  _shells;
-  int             _is_valid;
-  InputTypes      _inputtype;
+  std::string         _id;
+  std::string         _id_building;
+  std::string         _id_buildingpart;
+  std::vector<Shell*> _shells;
+  int                 _is_valid;
+  InputTypes          _inputtype;
 
-  std::map<int, vector< std::tuple<int, int, std::string> > > _errors;
+  std::map<int, std::vector< std::tuple<int, int, std::string> > > _errors;
 
   bool validate_solid_with_nef();
 };
 
+} // namespace val3dity
 
 #endif /* defined(__val3dity__Solid__) */

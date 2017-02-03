@@ -29,6 +29,8 @@
 #include <tclap/CmdLine.h>
 #include <time.h>  
 
+using namespace std;
+using namespace val3dity;
 
 std::string print_summary_validation(vector<Solid*>& lsSolids, Primitive3D prim3d, bool buildings, int& nobuildings);
 std::string print_unit_tests(vector<Solid*>& lsSolids, Primitive3D prim3d, bool usebuildings);
