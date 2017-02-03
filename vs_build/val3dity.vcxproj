@@ -69,26 +69,28 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>VAL3DITY_USE_EPECSQRT;VAL3DITY_DISABLE_LOGGING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\..\boost_1_60_0;..\..\CGAL-4.8\include;..\..\CGAL-4.8\bin\include;..\..\CGAL-4.8\auxiliary\gmp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\free_use\boost\include;C:\Users\jcoukell\Dev\cgal47\include;C:\Users\jcoukell\Dev\cgal47\auxiliary\gmp\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\geos-svn\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\src\capi;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\src\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\PLATFORM-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>C:\Users\jcoukell\Dev\fme\install;C:\Users\jcoukell\Dev\cgal47\auxiliary\gmp\lib;C:\Users\jcoukell\Dev\cgal47\lib;C:\Users\jcoukell\Dev\fme\3rd\redistributable\free_use\boost\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mpfr-vc100-mt-s.lib;gmp-vc100-mt-s.lib;geos_fme.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>VAL3DITY_USE_EPECSQRT;VAL3DITY_DISABLE_LOGGING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\include;..\..\boost_1_60_0;..\..\CGAL-4.8\include;..\..\CGAL-4.8\bin\include;..\..\CGAL-4.8\auxiliary\gmp\include;..\..\assimp-3.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\free_use\boost\include;C:\Users\jcoukell\Dev\cgal47\include;C:\Users\jcoukell\Dev\cgal47\auxiliary\gmp\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\geos-svn\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\src\capi;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\src\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\PLATFORM-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -96,26 +98,32 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\jcoukell\Dev\fme\install;C:\Users\jcoukell\Dev\cgal47\auxiliary\gmp\lib;C:\Users\jcoukell\Dev\cgal47\lib;C:\Users\jcoukell\Dev\fme\3rd\redistributable\free_use\boost\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mpfr-vc100-mt-s.lib;gmp-vc100-mt-s.lib;geos_fme.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\boost_1_60_0;..\..\CGAL-4.8\include;..\..\CGAL-4.8\bin\include;..\..\CGAL-4.8\auxiliary\gmp\include;..\..\CGAL-4.8\build\include;..\..\assimp-3.2\include;C:\OSGeo4W64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_WIN32</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\free_use\boost\include;C:\Users\jcoukell\Dev\cgal47\include;C:\Users\jcoukell\Dev\cgal47\auxiliary\gmp\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\geos-svn\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\src\capi;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\src\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\PLATFORM-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VAL3DITY_USE_EPECSQRT;VAL3DITY_DISABLE_LOGGING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\CGAL-4.8\bin\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>C:\OSGeo4W64\lib\geos_c.lib;C:\OSGeo4W64\lib\zlib.lib;..\..\CGAL-4.8\auxiliary\gmp\lib\libgmp-10.lib;..\..\CGAL-4.8\auxiliary\gmp\lib\libmpfr-4.lib;..\..\CGAL-4.8\build\lib\libCGAL-vc140-mt-4.8.lib;..\..\CGAL-4.8\build\lib\libCGAL_Core-vc140-mt-4.8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\jcoukell\Dev\fme\install;C:\Users\jcoukell\Dev\cgal47\auxiliary\gmp\lib;C:\Users\jcoukell\Dev\cgal47\lib;C:\Users\jcoukell\Dev\fme\3rd\redistributable\free_use\boost\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mpfr-vc100-mt-s.lib;gmp-vc100-mt-s.lib;geos_fme.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\boost_1_60_0;..\..\CGAL-4.8\include;..\..\CGAL-4.8\bin\include;..\..\CGAL-4.8\auxiliary\gmp\include;..\..\CGAL-4.8\build\include;..\..\assimp-3.2\include;C:\OSGeo4W64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\free_use\boost\include;C:\Users\jcoukell\Dev\cgal47\include;C:\Users\jcoukell\Dev\cgal47\auxiliary\gmp\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\geos-svn\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\src\capi;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\src\include;C:\Users\jcoukell\Dev\fme\3rd\redistributable\lgpl\geos\PLATFORM-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>VAL3DITY_USE_EPECSQRT;VAL3DITY_DISABLE_LOGGING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\CGAL-4.8\bin\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>C:\OSGeo4W64\lib\geos_c.lib;C:\OSGeo4W64\lib\zlib.lib;..\..\CGAL-4.8\auxiliary\gmp\lib\libgmp-10.lib;..\..\CGAL-4.8\auxiliary\gmp\lib\libmpfr-4.lib;..\..\CGAL-4.8\build\lib\libCGAL-vc140-mt-gd-4.8.lib;..\..\CGAL-4.8\build\lib\libCGAL_Core-vc140-mt-gd-4.8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\jcoukell\Dev\fme\install;C:\Users\jcoukell\Dev\cgal47\auxiliary\gmp\lib;C:\Users\jcoukell\Dev\cgal47\lib;C:\Users\jcoukell\Dev\fme\3rd\redistributable\free_use\boost\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mpfr-vc100-mt-s.lib;gmp-vc100-mt-s.lib;geos_fme.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -126,7 +134,6 @@
     <ClCompile Include="..\Shell.cpp" />
     <ClCompile Include="..\Solid.cpp" />
     <ClCompile Include="..\validate_shell.cpp" />
-    <ClCompile Include="..\validate_shell_intersection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\definitions.h" />
@@ -162,11 +169,6 @@
     <ClInclude Include="..\Solid.h" />
     <ClInclude Include="..\validate_shell.h" />
     <ClInclude Include="..\validate_shell_intersection.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\assimp-3.2\vs_build\assimp.vcxproj">
-      <Project>{7a042954-9c47-38b3-bdad-e2e0a56616eb}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

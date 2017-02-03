@@ -5,7 +5,7 @@ import glob
 import subprocess
 from lxml import etree
 
-VAL3DITYEXE = '../val3dity'
+VAL3DITYEXE = '../vs_build/x64/Debug/val3dity'
 SOLIDFOLDER = '../data/poly/'
 
 
@@ -121,10 +121,10 @@ def validate(file, planartol=0.01):
     # print re
     output = []
     if (re != ''):
-        if (re.find('@VALID') != -1):
+        if (re.decode('utf-8').find('@VALID') != -1):
             return output
-        i = re.find('@INVALID')
-        s = re[i+9:]
+        i = re.decode('utf-8').find('@INVALID')
+        s = re.decode('utf-8')[i+9:]
         tmp = s.split(" ")
         codes = map(int, tmp[:-1])
         for each in codes:
